@@ -1,0 +1,84 @@
+<app-menu-principal></app-menu-principal>
+<div class="fixed panel">
+  <p-panel header="RECURSOS "  >
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-6">
+        <label for="nome" >Nome</label>
+    <p-autoComplete
+      [(ngModel)]="pesquisaRegistro"
+      [suggestions]="filteredPesquisa"
+      (completeMethod)="search($event)"
+      (onSelect)="select()"
+      (maxlength)=4
+      field="nome"
+    ></p-autoComplete>
+    </div>
+  </div>
+    <form
+      [formGroup]="reactiveForm"
+      (ngSubmit)="onSubmit()"
+    >
+
+    <div class="formgrid grid">
+    <div class="field col-12 md:col-2">
+        <label for="codigo">Codigo</label>
+        <input [disabled]="true" value={{reactiveForm.value.codigo}}  type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="nome">Nome</label>
+      <input id="nome" formControlName="nome" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+  </div>
+    <div class="field col-12 md:col-4">
+      <label for="cargo">Cargo</label>
+      <input id="cargo" formControlName="cargo" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-4">
+      <label for="usuario">Usuário</label>
+      <input id="usuario" formControlName="usuario" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="valorHora">Valor Hora</label>
+      <input id="valorHora" formControlName="valorHora" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="meta">Meta</label>
+      <input id="meta" formControlName="meta" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="certificacao">Certificação</label>
+      <input id="certificacao" formControlName="certificacao" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="valorAplicado">Valor Aplicado</label>
+      <input id="valorAplicado" formControlName="valorAplicado" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="valorFixo">Valor fixo</label>
+      <input id="valorFixo" formControlName="valorFixo" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-6">
+      <label for="email">E-mail</label>
+      <input id="email" formControlName="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="banco">Banco</label>
+      <input id="banco" formControlName="banco" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="agencia">Agencia</label>
+      <input id="agencia" formControlName="agencia" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="conta">Conta</label>
+      <input id="conta" formControlName="conta" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="pix">Pix</label>
+      <input id="pix" formControlName="pix" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-2">
+      <label for="tipoPix">Tipo Pix</label>
+      <input id="tipoPix" formControlName="tipoPix" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+</div>
+<app-botoes [json]="reactiveForm.value" [tabela]="tabela"></app-botoes>

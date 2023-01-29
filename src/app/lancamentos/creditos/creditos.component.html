@@ -1,0 +1,74 @@
+<app-menu-principal></app-menu-principal>
+<div class="fixed panel">
+  <p-panel header="CREDITOS ">
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-6">
+        <label for="descricao">Pesquisar</label>
+        <p-autoComplete
+          [(ngModel)]="pesquisaRegistro"
+          [suggestions]="filteredPesquisa"
+          (completeMethod)="search($event)"
+          (onSelect)="select()"
+          (maxlength)="(4)"
+          field="descricao"
+        ></p-autoComplete>
+        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+          <div class="formgrid grid">
+            <div class="field col-12 md:col-1">
+              <label for="codigo">Codigo</label>
+              <input
+                [disabled]="true"
+                value="{{ reactiveForm.value.codigo }}"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+              </div>
+            <div class="field col-12 md:col-4">
+              <label for="data">Data</label>
+              <input
+                id="data"
+                formControlName="data"
+                type="date"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-6">
+              <label for="descricao">Descricao</label>
+              <input
+                id="descricao"
+                formControlName="descricao"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-4">
+              <label for="tipo">Tipo</label>
+              <input
+                id="tipo"
+                formControlName="tipo"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-4">
+              <label for="valor">Valor</label>
+              <input
+                id="valor"
+                formControlName="valor"
+                type="number"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-4">
+              <label for="observacao">Observacao</label>
+              <input
+                id="observacao"
+                formControlName="observacao"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+
+<app-botoes
+[json]="reactiveForm.value"
+[tabela]="tabela">
+</app-botoes>

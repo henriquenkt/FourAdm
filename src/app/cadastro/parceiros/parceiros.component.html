@@ -1,0 +1,62 @@
+<app-menu-principal></app-menu-principal>
+<div class="fixed panel">
+<p-panel header="PARCEIROS "  >
+  <div class="formgrid grid">
+    <div class="field col-12 md:col-6">
+      <label for="empresa" >Pesquisar</label>
+  <p-autoComplete
+    [(ngModel)]="pesquisaRegistro"
+    [suggestions]="filteredPesquisa"
+    (completeMethod)="search($event)"
+    (onSelect)="select()"
+    (maxlength)=4
+    field="empresa"
+  ></p-autoComplete>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+      <div class="formgrid grid">
+        <div class="field col-12 md:col-2">
+          <label for="codigo">codigo</label>
+          <input
+            [disabled]="true" value={{reactiveForm.value.codigo}}
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12 md:col-6">
+          <label for="Empresa">Empresa</label>
+          <input
+            id="Empresa"
+            formControlName="empresa"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12 md:col-4">
+          <label for="CNPJ">CNPJ</label>
+          <input
+            id="CNPJ"
+            formControlName="cnpj"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12 md:col-2">
+          <label for="vlrCon">Valor Consultoria</label>
+          <input
+            id="vlrCon"
+            formControlName="valorConsultoria"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12 md:col-2">
+          <label for="vlrGre">Valor Gerenciamento</label>
+          <input
+            id="vlrCon"
+            formControlName="valorGerenciamento"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+      </div>
+<app-botoes [json]="reactiveForm.value" [tabela]="tabela"></app-botoes>

@@ -1,0 +1,83 @@
+<app-menu-principal></app-menu-principal>
+<div class="fixed panel">
+  <p-panel header="CLIENTES ">
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-6">
+        <label for="razaoSocial">Pesquisar</label>
+        <p-autoComplete
+          [(ngModel)]="pesquisaRegistro"
+          [suggestions]="filteredPesquisa"
+          (completeMethod)="search($event)"
+          (onSelect)="select()"
+          (maxlength)="(4)"
+          field="nome"
+        ></p-autoComplete>
+        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+          <div class="formgrid grid">
+            <div class="field col-12 md:col-1">
+              <label for="codigo">Codigo</label>
+              <input
+                [disabled]="true"
+                value="{{ reactiveForm.value.codigo }}"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-6">
+              <label for="nome">Nome</label>
+              <input
+                id="nome"
+                formControlName="nome"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-4">
+              <label for="usuCloud">Usuario Cloud</label>
+              <input
+                id="usuCloud"
+                formControlName="usuCloud"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-4">
+              <label for="senCloud">Senha Cloud</label>
+              <input
+                id="senCloud"
+                formControlName="senCloud"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-4">
+              <label for="usuario">Usuario</label>
+              <input
+                id="usuario"
+                formControlName="usuario"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-4">
+              <label for="senha">Senha</label>
+              <input
+                id="senha"
+                formControlName="senha"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+            <div class="field col-12 md:col-222">
+              <label for="textoLivre">Observações</label>
+              <textarea
+                id="textoLivre"
+                formControlName="textoLivre"
+                type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full "
+              ></textarea>
+            </div>
+          </div>
+<app-botoes
+[json]="reactiveForm.value"
+[tabela]="tabela">
+</app-botoes>

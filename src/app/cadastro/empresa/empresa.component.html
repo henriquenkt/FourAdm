@@ -1,0 +1,64 @@
+<app-menu-principal></app-menu-principal>
+<div class="fixed panel">
+<p-panel header="EMPRESAS "  >
+  <div class="formgrid grid">
+    <div class="field col-12 md:col-6">
+      <label for="razaoSocial" >Pesquisar</label>
+  <p-autoComplete
+    [(ngModel)]="pesquisaRegistro"
+    [suggestions]="filteredPesquisa"
+    (completeMethod)="search($event)"
+    (onSelect)="select()"
+    (maxlength)=4
+    field="razaoSocial"
+  ></p-autoComplete>
+    <form
+      [formGroup]="reactiveForm"
+      (ngSubmit)="onSubmit()"
+    >
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-2">
+          <label for="codigo">codigo</label>
+          <input [disabled]="true" value={{reactiveForm.value.codigo}} class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+
+          <!-- <input id="codigo" formControlName="codigo" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"> -->
+      </div>
+      <div class="field col-12 md:col-6">
+          <label for="razaoSocial">Razão Social</label>
+          <input id="razaoSocial" formControlName="razaoSocial" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field col-4">
+          <label for="Cnpj">CNPJ</label>
+          <input id="Cnpj" formControlName="cnpj" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field col-12 md:col-3">
+          <label for="Cep">Cep</label>
+          <input id="cep" formControlName="cep" type="text" mask="(00) 0000-0000" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field col-12 md:col-8">
+          <label for="Endereco">Endereço</label>
+          <input id="Endereco" formControlName="endereco" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field col-12 md:col-2">
+          <label for="numero">Número</label>
+          <input id="numero" formControlName="numero" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field col-12 md:col-5">
+          <label for="Complemento">Complemento</label>
+          <input id="Complemento" formControlName="complemento" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div class="field col-12 md:col-5">
+        <label for="Bairro">Bairro</label>
+        <input id="Bairro" formControlName="bairro" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-5">
+      <label for="Cidade">Cidade</label>
+      <input id="Cidade" formControlName="cidade" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+  </div>
+  <div class="field col-12 md:col-5">
+    <label for="Aliquota">Aliquota</label>
+    <input id="Aliquota" formControlName="aliquota" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+</div>
+</div>
+<app-botoes [json]="reactiveForm.value" [tabela]="tabela"></app-botoes>
+
