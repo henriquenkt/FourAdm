@@ -44,7 +44,7 @@
   "main": "karma.conf.js",
   "repository": {
     "type": "git",
-    "url": "four"
+    "url": "https://github.com/henriquenkt/fouradm.git"
   },
   "author": "Nakata Henrique",
   "license": "ISC"
