@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "postinstall": "ng build --output-path producao",
+    "start": "node server.js",
+    "postinstall": "ng build --aot --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
