@@ -4,9 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "postinstall": "ng build --output-path producao",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "postinstall": "ng build --aot --output-path producao"
   },
   "private": true,
   "dependencies": {
