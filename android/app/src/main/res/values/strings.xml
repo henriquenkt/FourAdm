@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">four</string>
+    <string name="title_activity_main">four</string>
+    <string name="package_name">com.fourtc.app</string>
+    <string name="custom_url_scheme">com.fourtc.app</string>
+</resources>
