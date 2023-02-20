@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "postinstall": "ng build --aot --output-path producao",
-    "heroku-postbuild": "ng build",
+    "postinstall": "ng build --aot",
+    "heroku-postbuild": "ng build --prod",
     "ionic:serve": "npm run start"
   },
   "engines": {
