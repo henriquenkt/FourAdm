@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { map, Subscription } from 'rxjs';
 import { CrudService } from 'src/app/crud/crud.service';
 import { SchemaComponent } from 'src/app/schema/schema.component';
 
@@ -31,8 +31,11 @@ export class DebitosComponent {
 
   search(event: { query: any }) {
     this.crudService
-      .getSelecao('', this.tabela)
-      .subscribe((subscription) => (this.pesquisa = subscription));
+    .getSelecao('', this.tabela)
+    .pipe(map(data => {
+           this.pesquisa = data;
+          }))
+    .subscribe();
     this.subscription.unsubscribe();
     let filtered: any[] = [];
     let query = event.query;
@@ -43,6 +46,7 @@ export class DebitosComponent {
       }
     }
     this.filteredPesquisa = filtered;
+    this.pesquisaRegistro = '';
   }
 
   select() {

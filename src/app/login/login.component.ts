@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loginService.$login(this.userLogin)
     .pipe(map(data => {
       var result = data
-           console.log(result);
            this.isAuthenticated = result;
            this.validaUsuario();
           }))
