@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,6 +9,16 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuPrincipalComponent {
   items!: MenuItem[];
+  router: Router;
+
+  constructor(router: Router) {
+    this.router = router;
+  }
+
+  logoff(){
+    sessionStorage.clear();
+     this.router.navigate(['/login']);
+  }
 
   ngOnInit() {
 
