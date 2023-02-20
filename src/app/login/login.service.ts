@@ -1,25 +1,27 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 
 const baseUrl = 'https://fourbackend.herokuapp.com';
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-
   constructor(private http: HttpClient) {}
 
   headers = new HttpHeaders()
-    .set('Content-Type', 'application/json')
-  login(data: any) : Observable<any> {
+  .set('Content-Type', 'application/json');
+  $login(data: any): Observable<any> {
     var result = this.http.post(`${baseUrl}/authenticate`, data, {
       headers: this.headers,
     });
-    return result
-  }
+    return result;
+   }
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
@@ -33,9 +35,5 @@ export class LoginService {
         error.error
       );
     }
-    // Return an observable with a user-facing error message.
-    return throwError(
-      () => new Error('Something bad happened; please try again later.')
-    );
   }
 }

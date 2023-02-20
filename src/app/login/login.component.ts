@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { map, Subscription } from 'rxjs';
 import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
+
 })
 export class LoginComponent implements OnInit, OnDestroy {
   subscription: Subscription = new Subscription;
@@ -17,21 +18,31 @@ export class LoginComponent implements OnInit, OnDestroy {
   botaoSenha: any;
   router: Router;
 
+//   userLogin = new FormGroup({
+//     botaoSenha: new FormControl(),
+//     email: new FormControl(),
+//     password: new FormControl()
+// });
+
   constructor(private loginService: LoginService, router: Router) {
     this.router = router;
   }
 
   ngOnInit(): void {
-
   }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
   authenticate() {
-    this.loginService.login(this.userLogin)
-    .subscribe(subscription => this.isAuthenticated = subscription);
-    this.validaUsuario();
+    this.loginService.$login(this.userLogin)
+    .pipe(map(data => {
+      var result = data
+           this.isAuthenticated = result;
+           this.validaUsuario();
+          }))
+    .subscribe();
   }
 
   validaUsuario(){
@@ -51,3 +62,5 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isAuthenticated = this.userLogged != null;
   }
 }
+
+

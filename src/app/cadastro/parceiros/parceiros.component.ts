@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { map, Subscription } from 'rxjs';
 import { CrudService } from 'src/app/crud/crud.service';
 import { SchemaComponent } from 'src/app/schema/schema.component';
 
@@ -30,33 +30,16 @@ export class ParceirosComponent {
     this.reactiveForm.controls;
   }
 
-  inserir() {
-    this.crudService
-      .getInsert(this.reactiveForm.value, this.tabela)
-      .subscribe();
-    this.subscription.unsubscribe();
-  }
-
-  alterar(): void {
-    this.crudService
-      .getUpdate(this.reactiveForm.value, this.tabela)
-      .subscribe();
-    this.subscription.unsubscribe();
-  }
-
-  excluir(): void {
-    this.crudService
-      .getDelete(this.reactiveForm.value, this.tabela)
-      .subscribe();
-    this.subscription.unsubscribe();
-  }
-
   reactiveForm = SchemaComponent.parceirosForm
 
   search(event: { query: any }) {
     this.crudService
-      .getSelecao('', this.tabela)
-      .subscribe((subscription) => (this.pesquisa = subscription));
+    .getSelecao('', this.tabela)
+    .pipe(map(data => {
+      var result = data
+           this.pesquisa = result;
+          }))
+    .subscribe();
     this.subscription.unsubscribe();
     let filtered: any[] = [];
     let query = event.query;
@@ -71,5 +54,6 @@ export class ParceirosComponent {
 
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
+    this.pesquisaRegistro = '';
   }
 }
