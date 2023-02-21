@@ -17,6 +17,10 @@ body {
   }
 }
 
+.p-datatable {
+     margin-left: 200px;
+}
+
 .textarea{
   width: 100px;
 }

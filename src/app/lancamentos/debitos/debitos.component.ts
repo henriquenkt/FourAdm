@@ -12,7 +12,7 @@ export class DebitosComponent {
   filteredPesquisa: any[] = [];
   pesquisaRegistro: any;
   pesquisa: any[] = [];
-  tabela: string = 'debitos';
+  tabela: string = 'lancamentos';
 
   constructor(private crudService: CrudService) {}
 
@@ -27,7 +27,7 @@ export class DebitosComponent {
     this.reactiveForm.controls;
   }
 
-  reactiveForm = SchemaComponent.debitosForm
+  reactiveForm = SchemaComponent.lancamentosForm
 
   search(event: { query: any }) {
     this.crudService
@@ -46,12 +46,10 @@ export class DebitosComponent {
       }
     }
     this.filteredPesquisa = filtered;
-    this.pesquisaRegistro = '';
   }
 
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
-    this.filteredPesquisa = [];
     this.pesquisaRegistro = '';
   }
 }

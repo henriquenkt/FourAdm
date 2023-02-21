@@ -1,11 +1,4 @@
-import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
-@Component({
-  selector: 'app-schema',
-  templateUrl: './schema.component.html',
-  styleUrls: ['./schema.component.css']
-})
 
 export class SchemaComponent {
 
@@ -67,7 +60,15 @@ export class SchemaComponent {
   });
 
   static lancamentosForm = new FormGroup({
-
+    _id: new FormControl(),
+    __v: new FormControl(),
+    codigo: new FormControl(),
+    data: new FormControl(),
+    descricao: new FormControl(),
+    tipo: new FormControl(),
+    valor: new FormControl(),
+    observacao: new FormControl(),
+    creditoDebito :new FormControl()
   });
 
   static creditosForm = new FormGroup({

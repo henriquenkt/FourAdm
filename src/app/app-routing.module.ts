@@ -8,6 +8,7 @@ import { ParceirosComponent } from './cadastro/parceiros/parceiros.component';
 import { RecursosComponent } from './cadastro/recursos/recursos.component';
 import { CreditosComponent } from './lancamentos/creditos/creditos.component';
 import { DebitosComponent } from './lancamentos/debitos/debitos.component';
+import { DespesasComponent } from './lancamentos/despesas/despesas.component';
 import { LoginComponent } from './login/login.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 
@@ -51,7 +52,7 @@ const routes: Routes = [
   ,
   {
     path: 'despesas',
-    component: MenuPrincipalComponent,
+    component: DespesasComponent,
     canActivate:[AuthGuardService]
   }
   ,
@@ -69,7 +70,7 @@ const routes: Routes = [
   ,
   {
     path: 'caixa',
-    component: MenuPrincipalComponent,
+    component: DespesasComponent,
     canActivate:[AuthGuardService]
   }
   ,

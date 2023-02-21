@@ -23,7 +23,6 @@ import { ClientesComponent } from './cadastro/clientes/clientes.component';
 import {SlideMenuModule} from 'primeng/slidemenu';
 import {DividerModule} from 'primeng/divider';
 import {ImageModule} from 'primeng/image';
-import { SchemaComponent } from './schema/schema.component';
 import { CrudComponent } from './crud/crud.component';
 import {SidebarModule} from 'primeng/sidebar';
 import {PanelModule} from 'primeng/panel';
@@ -31,6 +30,8 @@ import { BotoesComponent } from './botoes/botoes.component';
 import {ButtonModule} from 'primeng/button';
 import { DebitosComponent } from './lancamentos/debitos/debitos.component';
 import { CreditosComponent } from './lancamentos/creditos/creditos.component';
+import { DespesasComponent } from './lancamentos/despesas/despesas.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,10 @@ import { CreditosComponent } from './lancamentos/creditos/creditos.component';
     RecursosComponent,
     ClientesComponent,
     CrudComponent,
-    SchemaComponent,
     BotoesComponent,
     DebitosComponent,
-    CreditosComponent
+    CreditosComponent,
+    DespesasComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +66,8 @@ import { CreditosComponent } from './lancamentos/creditos/creditos.component';
     ReactiveFormsModule,
     SidebarModule,
     PanelModule,
-    ButtonModule
+    ButtonModule,
+    TableModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

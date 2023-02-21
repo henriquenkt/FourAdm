@@ -1,0 +1,30 @@
+<app-menu-principal></app-menu-principal>
+<p-table [value]="lancamentos" styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}">
+  <ng-template pTemplate="caption">
+      CAIXA
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Codigo</th>
+          <th>Data</th>
+          <th>Descricao</th>
+          <th>Tipo</th>
+          <th>Valor</th>
+          <th>Observações</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-lancamentos>
+      <tr>
+          <td>{{lancamentos.codigo}}</td>
+          <td>{{lancamentos.data}}</td>
+          <td>{{lancamentos.descricao}}</td>
+          <td>{{lancamentos.tipo}}</td>
+          <td>{{lancamentos.valor}}</td>
+          <td>{{lancamentos.observacao}}</td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+      Four lançamentos
+  </ng-template>
+</p-table>
+
