@@ -54,5 +54,6 @@ export class RecursosComponent implements OnInit, OnDestroy {
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
     this.pesquisaRegistro = '';
+    this.filteredPesquisa = []
   }
 }

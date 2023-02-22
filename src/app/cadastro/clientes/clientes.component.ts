@@ -52,5 +52,6 @@ export class ClientesComponent {
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
     this.pesquisaRegistro = '';
+    this.filteredPesquisa = []
   }
 }

@@ -53,5 +53,6 @@ export class EmpresaComponent {
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
     this.pesquisaRegistro = '';
+    this.filteredPesquisa = []
   }
 }
