@@ -7,7 +7,7 @@ import { EmpresaComponent } from './cadastro/empresa/empresa.component';
 import { ParceirosComponent } from './cadastro/parceiros/parceiros.component';
 import { RecursosComponent } from './cadastro/recursos/recursos.component';
 import { CreditosComponent } from './lancamentos/creditos/creditos.component';
-import { DebitosComponent } from './lancamentos/debitos/debitos.component';
+import { LancarComponent } from './lancamentos/Lancar/lancar.component';
 import { DespesasComponent } from './lancamentos/despesas/despesas.component';
 import { LoginComponent } from './login/login.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
@@ -51,20 +51,8 @@ const routes: Routes = [
   }
   ,
   {
-    path: 'despesas',
-    component: DespesasComponent,
-    canActivate:[AuthGuardService]
-  }
-  ,
-  {
-    path: 'creditos',
-    component: CreditosComponent,
-    canActivate:[AuthGuardService]
-  }
-  ,
-  {
-    path: 'debitos',
-    component: DebitosComponent,
+    path: 'lancar',
+    component: LancarComponent,
     canActivate:[AuthGuardService]
   }
   ,

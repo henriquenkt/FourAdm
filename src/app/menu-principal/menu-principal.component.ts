@@ -41,10 +41,8 @@ export class MenuPrincipalComponent {
         label: 'Lancamentos',
         icon: 'pi pi-fw pi-pencil',
         items: [
-          { label: 'Despesas', icon: 'pi pi-minus-circle' ,
-          routerLink: ['/debitos'] },
-          { label: 'Creditos', icon: 'pi pi-plus-circle' ,
-          routerLink: ['/creditos'] },
+          { label: 'Lancar', icon: 'pi pi-minus-circle' ,
+          routerLink: ['/lancar'] },
           { label: 'Caixa', icon: 'pi pi-money-bill',
           routerLink: ['/caixa']  },
         ],

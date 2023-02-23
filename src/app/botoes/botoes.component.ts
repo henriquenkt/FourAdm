@@ -1,6 +1,4 @@
-import { outputAst } from '@angular/compiler';
 import { Component, Input, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CrudService } from 'src/app/crud/crud.service';
 

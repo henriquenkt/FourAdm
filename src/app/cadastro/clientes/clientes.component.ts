@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { map, Subscription } from 'rxjs';
+import { map } from 'rxjs';
 import { CrudService } from 'src/app/crud/crud.service';
 import { SchemaComponent } from 'src/app/schema/schema.component';
 
@@ -8,7 +8,6 @@ import { SchemaComponent } from 'src/app/schema/schema.component';
   templateUrl: './clientes.component.html'
 })
 export class ClientesComponent {
-  subscription: Subscription = new Subscription();
   filteredPesquisa: any[] = [];
   pesquisaRegistro: any;
   pesquisa: any[] = [];
@@ -20,7 +19,6 @@ export class ClientesComponent {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   onSubmit() {
@@ -37,7 +35,6 @@ export class ClientesComponent {
              this.pesquisa = result;
             }))
       .subscribe();
-    this.subscription.unsubscribe();
     let filtered: any[] = [];
     let query = event.query;
     for (let i = 0; i < this.pesquisa.length; i++) {
@@ -52,6 +49,6 @@ export class ClientesComponent {
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
     this.pesquisaRegistro = '';
-    this.filteredPesquisa = []
+    this.pesquisa = [];
   }
 }

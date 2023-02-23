@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { map, Subscription } from 'rxjs';
+import { map } from 'rxjs';
 import { CrudService } from 'src/app/crud/crud.service';
 import { SchemaComponent } from 'src/app/schema/schema.component';
 
 @Component({
   selector: 'app-despesas',
-  templateUrl: './debitos.component.html'
+  templateUrl: './lancar.component.html'
 })
-export class DebitosComponent {
-  subscription: Subscription = new Subscription();
+export class LancarComponent {
+
   filteredPesquisa: any[] = [];
   pesquisaRegistro: any;
   pesquisa: any[] = [];
@@ -20,7 +20,6 @@ export class DebitosComponent {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   onSubmit() {
@@ -36,7 +35,6 @@ export class DebitosComponent {
            this.pesquisa = data;
           }))
     .subscribe();
-    this.subscription.unsubscribe();
     let filtered: any[] = [];
     let query = event.query;
     for (let i = 0; i < this.pesquisa.length; i++) {
@@ -51,7 +49,7 @@ export class DebitosComponent {
   select() {
     this.reactiveForm.setValue(this.pesquisaRegistro);
     this.pesquisaRegistro = '';
-    this.filteredPesquisa = []
+    this.pesquisa = [];
   }
 }
 

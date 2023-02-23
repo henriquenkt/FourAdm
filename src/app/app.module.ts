@@ -28,7 +28,7 @@ import {SidebarModule} from 'primeng/sidebar';
 import {PanelModule} from 'primeng/panel';
 import { BotoesComponent } from './botoes/botoes.component';
 import {ButtonModule} from 'primeng/button';
-import { DebitosComponent } from './lancamentos/debitos/debitos.component';
+import { LancarComponent } from './lancamentos/Lancar/lancar.component';
 import { CreditosComponent } from './lancamentos/creditos/creditos.component';
 import { DespesasComponent } from './lancamentos/despesas/despesas.component';
 import {TableModule} from 'primeng/table';
@@ -44,7 +44,7 @@ import {TableModule} from 'primeng/table';
     ClientesComponent,
     CrudComponent,
     BotoesComponent,
-    DebitosComponent,
+    LancarComponent,
     CreditosComponent,
     DespesasComponent,
   ],
