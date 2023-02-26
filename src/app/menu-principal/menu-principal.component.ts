@@ -47,6 +47,16 @@ export class MenuPrincipalComponent {
           routerLink: ['/caixa']  },
         ],
       },
+      {
+        label: 'RAT',
+        icon: 'pi pi-fw pi-pencil',
+        items: [
+          { label: 'Lancar RAT', icon: 'pi pi-money-bill' ,
+          routerLink: ['/rat'] },
+          { label: 'Consultar', icon: 'pi pi-money-bill',
+          routerLink: ['/consultaRat']  },
+        ],
+      },
     ];
   }
 }

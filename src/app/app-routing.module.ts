@@ -63,6 +63,18 @@ const routes: Routes = [
   }
   ,
   {
+    path: 'rat',
+    component: DespesasComponent,
+    canActivate:[AuthGuardService]
+  }
+  ,
+  {
+    path: 'consultarRAT',
+    component: DespesasComponent,
+    canActivate:[AuthGuardService]
+  }
+  ,
+  {
     path: 'authenticate',
     component: AppComponent,
     canActivate:[AuthGuardService]
