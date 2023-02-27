@@ -57,6 +57,14 @@ export class MenuPrincipalComponent {
           routerLink: ['/consultaRat']  },
         ],
       },
+      {
+        label: 'Demandas',
+        icon: 'pi pi-fw pi-pencil',
+        items: [
+          { label: 'Consultar Demandas', icon: 'pi pi-money-bill' ,
+          routerLink: ['/demandas'] }
+        ],
+      },
     ];
   }
 }

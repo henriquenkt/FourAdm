@@ -1,0 +1,30 @@
+<app-menu-principal></app-menu-principal>
+<p-table [value]="demandas" styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}">
+  <ng-template pTemplate="caption">
+      CAIXA
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Codigo</th>
+          <th>Data</th>
+          <th>Descricao</th>
+          <th>Tipo</th>
+          <th>Valor</th>
+          <th>Observações</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-demandas>
+      <tr>
+          <td>{{demandas.idDemanda}}</td>
+          <td>{{demandas.atendimento}}</td>
+          <td>{{demandas.escopo}}</td>
+          <td>{{demandas.titulo}}</td>
+          <td>{{demandas.descricao}}</td>
+          <td>{{demandas.datCadastro}}</td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+      Four Demandas
+  </ng-template>
+</p-table>
+

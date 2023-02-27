@@ -34,6 +34,7 @@ import { DespesasComponent } from './lancamentos/despesas/despesas.component';
 import {TableModule} from 'primeng/table';
 import { RatComponent } from './RAT/rat/rat.component';
 import { ConsultaRatComponent } from './RAT/consulta-rat/consulta-rat.component';
+import { DemandasComponent } from './demandas/demandas.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ConsultaRatComponent } from './RAT/consulta-rat/consulta-rat.component'
     DespesasComponent,
     RatComponent,
     ConsultaRatComponent,
+    DemandasComponent,
   ],
   imports: [
     BrowserModule,

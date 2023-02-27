@@ -11,6 +11,9 @@ import { LancarComponent } from './lancamentos/Lancar/lancar.component';
 import { DespesasComponent } from './lancamentos/despesas/despesas.component';
 import { LoginComponent } from './login/login.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
+import { DemandasComponent } from './demandas/demandas.component';
+import { RatComponent } from './RAT/rat/rat.component';
+import { ConsultaRatComponent } from './RAT/consulta-rat/consulta-rat.component';
 
 const routes: Routes = [
   {
@@ -64,13 +67,19 @@ const routes: Routes = [
   ,
   {
     path: 'rat',
-    component: DespesasComponent,
+    component: RatComponent,
     canActivate:[AuthGuardService]
   }
   ,
   {
     path: 'consultarRAT',
-    component: DespesasComponent,
+    component: ConsultaRatComponent,
+    canActivate:[AuthGuardService]
+  }
+  ,
+  {
+    path: 'demandas',
+    component: DemandasComponent,
     canActivate:[AuthGuardService]
   }
   ,
